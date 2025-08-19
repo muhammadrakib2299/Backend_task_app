@@ -3,9 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Expres</title>
+    <title>Express</title>
+    <!-- Tailwind css -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body>
-    <h1>Learn Express with EJS</h1>
+    <div class="main w-full min-h-screen bg-zinc-900 text-white">
+      <h1 class="px-10 pt-5 text-4xl">Fill the form:</h1>
+      <div class="form p-10">
+        <form action="">
+          <input
+            class="block px-5 py-2 w-full bg-zinc-800 rounded-md outline-none"
+            type="text"
+            placeholder="Title"
+          />
+          <textarea
+            class="block px-5 py-2 mt-2 w-full resize-none bg-zinc-800 rounded-md outline-none"
+            placeholder="write your task details"
+          ></textarea>
+          <input
+            class="mt-4 bg-blue-600 px-5 py-2 rounded-lg cursor-pointer"
+            type="submit"
+            value="Create Task"
+          />
+        </form>
+      </div>
+    </div>
   </body>
 </html>
