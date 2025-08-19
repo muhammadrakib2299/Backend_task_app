@@ -11,15 +11,17 @@
     <div class="main w-full min-h-screen bg-zinc-900 text-white">
       <h1 class="px-10 pt-5 text-4xl">Fill the form:</h1>
       <div class="form p-10">
-        <form action="">
+        <form action="/create" method="post">
           <input
             class="block px-5 py-2 w-full bg-zinc-800 rounded-md outline-none"
             type="text"
             placeholder="Title"
+            name="title"
           />
           <textarea
             class="block px-5 py-2 mt-2 w-full resize-none bg-zinc-800 rounded-md outline-none"
             placeholder="write your task details"
+            name="details"
           ></textarea>
           <input
             class="mt-4 bg-blue-600 px-5 py-2 rounded-lg cursor-pointer"
@@ -32,7 +34,7 @@
       <div class="task p-10 flex flex-wrap gap-4">
         <% if(files.length > 0){%> <% files.forEach(function(val){%>
         <div class="task w-72 px-3 py-4 rounded-md bg-zinc-800">
-          <h1 class="text-white text-2xl pb-2">Some task here</h1>
+          <h1 class="text-white text-2xl pb-2"><%= val %></h1>
           <a class="text-blue-500" href="">Read More</a>
         </div>
         <%}) %> <% } else{%>
@@ -43,9 +45,3 @@
     </div>
   </body>
 </html>
-
-<!-- <div class="task w-72 px-3 py-4 rounded-md bg-zinc-800">
-  <h1 class="text-white text-2xl pb-2">Some task here</h1>
-  <a class="text-blue-500" href="">Read More</a>
-</div> -->
-<!-- <h3 class="text-zinc-300">No tasks Yet</h3> -->
