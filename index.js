@@ -15,6 +15,24 @@ app.get("/", function (req, res) {
   });
 });
 
+// Update edit file
+app.post("/edit", function (req, res) {
+  fs.rename(
+    `./files/${req.body.previous}`,
+    `./files/${req.body.new}`,
+    function (err) {
+      res.redirect("/");
+    }
+  );
+});
+
+// Edit file
+app.get("/file/edit/:filename", function (req, res) {
+  fs.readdir(`./files`, function (err, files) {
+    res.render("edit", { filename: req.params.filename });
+  });
+});
+
 // Read file
 app.get("/file/:filename", function (req, res) {
   fs.readFile(
